@@ -22,10 +22,16 @@ class LinksController < ApplicationController
     end
   end
 
+  def update
+    link = Link.find(params[:id])
+    link.update(link_params)
+    render json: link
+  end
+
   private
 
   def link_params
-    params.require(:link).permit(:url, :title)
+    params.require(:link).permit(:url, :title, :read)
   end
 
   def authorized?
