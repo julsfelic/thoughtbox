@@ -3,6 +3,14 @@
 <h2>Search:</h2>
 <input type="text" id="searchBar">
 
+<h2>Sort</h2>
+<select name="sort" id="sort">
+  <option value="nil" selected="selected">-pick an option-</option>
+  <option value="alphabetically">Alphabetically</option>
+  <option value="read">Read</option>
+  <option value="unread">Unread</option>
+</select>
+
 <h2>New Link</h2>
 <%= form_for(@link_decorator.link) do |f| %>
   <%= f.label :url, 'URL' %>
