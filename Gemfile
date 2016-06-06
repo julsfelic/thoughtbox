@@ -16,6 +16,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.4'
   gem 'factory_girl_rails'
   gem 'launchy'
+  gem 'pry-rails'
 end
 
 group :development do

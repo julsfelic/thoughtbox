@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       flash[:success] = 'Thank your for signing up!'
       redirect_to links_path
     else
+      render :new
     end
   end
 

@@ -24,9 +24,27 @@ RSpec.feature 'User can sign up' do
     end
   end
 
-  # context 'with invalid information' do
-  #   scenario 'they see an error message' do
+  context 'with invalid information' do
+    scenario 'they see an error message' do
+      email = 'julsfelic@example.com'
+      invalid_password = ''
+
+      visit root_path
+      click_on 'Signup'
+
+      expect(current_path).to eq '/signup'
+
+      fill_in 'Email', with: email
+      fill_in 'Password', with: invalid_password
+      fill_in 'Password confirmation', with: invalid_password
+      click_on 'Sign up'
+
+      expect(current_path).to_not eq '/links'
+      expect(page).to have_content 'There are 3 errors'
+    end
+  end
+
+  # context 'with an email that is already taken' do
   #
-  #   end
   # end
 end
