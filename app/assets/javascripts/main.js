@@ -29,6 +29,7 @@ var Link = {
       var linksArray = Array.prototype.slice.call(links);
 
       var sortedLinks = linksArray.sort(function(a, b) {
+        $(a).removeClass('hide');
         var aText = $(a).find('#linkTitle').text(),
           bText = $(b).find('#linkTitle').text();
         return bText < aText;
