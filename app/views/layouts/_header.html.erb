@@ -1,7 +1,9 @@
-<header>
+<header class="header">
   <%= link_to 'Thoughtbox', links_path %>
   <% if current_user %>
-    <span>Welcome, <%= current_user.email %>!</span>
-    <%= link_to 'Log Out', logout_path, method: :delete %>
+    <div class="greeting">
+      <small>Welcome, <%= current_user.email %>!</small>
+      <%= link_to 'Log Out', logout_path, method: :delete %>
+    </div>
   <% end %>
 </header>
