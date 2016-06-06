@@ -1,6 +1,6 @@
 <h1>All of the links!</h1>
 
-<%= form_for(@link) do |f| %>
+<%= form_for(@link_decorator.link) do |f| %>
   <%= f.label :url, 'URL' %>
   <%= f.text_field :url %>
 
@@ -11,10 +11,10 @@
 <% end %>
 
 <ul>
-  <% if @links.nil? %>
+  <% if @link_decorator.links.empty? %>
     <p>No links submitted</p>
   <% else %>
-    <% @links.each do |link| %>
+    <% @link_decorator.links.each do |link| %>
       <li>
         <h2><%= link_to link.title, link.url %></h2>
         <h3>Read: <%= link.read %></h3>

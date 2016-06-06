@@ -4,6 +4,8 @@ RSpec.describe Link, type: :model do
   it { should validate_presence_of(:url) }
   it { should validate_presence_of(:title) }
 
+  it { should belong_to(:user) }
+
   it 'should have a default read status of false' do
     link = Link.new(url: 'www.petrolhead.com', title: 'Petrolhead')
 
