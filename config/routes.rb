@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
 
   # Links routes
-  resources :links, only: [:index, :create, :update]
+  resources :links, only: [:index, :create, :edit, :update]
 end
