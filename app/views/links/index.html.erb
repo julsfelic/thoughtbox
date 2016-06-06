@@ -1,5 +1,9 @@
 <h1>All of the links!</h1>
 
+<h2>Search:</h2>
+<input type="text" id="searchBar">
+
+<h2>New Link</h2>
 <%= form_for(@link_decorator.link) do |f| %>
   <%= f.label :url, 'URL' %>
   <%= f.text_field :url %>
@@ -17,7 +21,7 @@
     <% @link_decorator.links.each do |link| %>
       <li data-id="<%= link.id %>" class="read-<%= link.read %>">
         <h2>
-          <%= link_to link.title, link.url %>
+          <%= link_to link.title, link.url, id: 'linkTitle' %>
           <%= link_to 'Mark as Read', '#', id: 'markAsRead' %>
           <%= link_to 'Mark as Unread', '#', id: 'markAsUnread' %>
           <%= link_to 'Edit', edit_link_path(link) %>
