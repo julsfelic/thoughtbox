@@ -1,1 +1,24 @@
 <h1>All of the links!</h1>
+
+<%= form_for(@link) do |f| %>
+  <%= f.label :url, 'URL' %>
+  <%= f.text_field :url %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.submit 'Submit' %>
+<% end %>
+
+<ul>
+  <% if @links.nil? %>
+    <p>No links submitted</p>
+  <% else %>
+    <% @links.each do |link| %>
+      <li>
+        <h2><%= link_to link.title, link.url %></h2>
+        <h3>Read: <%= link.read %></h3>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
