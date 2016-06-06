@@ -22,10 +22,22 @@ class LinksController < ApplicationController
     end
   end
 
+  def edit
+    @link = Link.find(params[:id])
+  end
+
   def update
     link = Link.find(params[:id])
-    link.update(link_params)
-    render json: link
+
+    if link.update(link_params)
+      respond_to do |format|
+        format.html do
+          redirect_to links_path, flash: { success: 'Link updated!' }
+        end
+        format.json { render json: link }
+      end
+    else
+    end
   end
 
   private

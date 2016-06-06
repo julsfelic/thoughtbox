@@ -20,6 +20,7 @@
           <%= link_to link.title, link.url %>
           <%= link_to 'Mark as Read', '#', id: 'markAsRead' %>
           <%= link_to 'Mark as Unread', '#', id: 'markAsUnread' %>
+          <%= link_to 'Edit', edit_link_path(link) %>
         </h2>
         <h3 id="readStatus">Read: <%= link.read %></h3>
       </li>
