@@ -13,11 +13,13 @@ RSpec.feature 'User can sign up' do
 
       fill_in 'Email', with: email
       fill_in 'Password', with: password
-      fill_in 'Password Confirmation', with: password
+      fill_in 'Password confirmation', with: password
       click_on 'Sign up'
 
       expect(current_path).to eq '/links'
       expect(page).to have_content 'All of the links!'
+      expect(page).to have_content 'Thank your for signing up!'
+      expect(page).to have_content "Welcome, #{email}!"
       expect(page).to have_link 'Log Out', href: '/logout'
     end
   end

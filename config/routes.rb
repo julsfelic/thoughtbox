@@ -3,7 +3,13 @@ Rails.application.routes.draw do
 
   # Session routes
   get '/login', to: 'sessions#new'
+  delete '/logout', to: 'sessions#destroy'
 
   # User routes
   get '/signup', to: 'users#new', as: 'new_user'
+
+  resources :users, only: [:create]
+
+  # Links routes
+  resources :links, only: [:index]
 end
