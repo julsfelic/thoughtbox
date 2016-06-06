@@ -44,7 +44,24 @@ RSpec.feature 'User can sign up' do
     end
   end
 
-  # context 'with an email that is already taken' do
-  #
-  # end
+  context 'with an email that is already taken' do
+    scenario 'they see an error message' do
+      user = create(:user)
+      taken_email = 'julsfelic@example.com'
+      password = 'password'
+
+      visit root_path
+      click_on 'Signup'
+
+      expect(current_path).to eq '/signup'
+
+      fill_in 'Email', with: taken_email
+      fill_in 'Password', with: password
+      fill_in 'Password confirmation', with: password
+      click_on 'Sign up'
+
+      expect(current_path).to_not eq '/links'
+      expect(page).to have_content 'Email has already been taken'
+    end
+  end
 end
