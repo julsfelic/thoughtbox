@@ -1,9 +1,9 @@
 <h1>All of the links!</h1>
 
-<h2>Search:</h2>
+<h2 class="search">Search:</h2>
 <input type="text" id="searchBar">
 
-<h2>Sort</h2>
+<h2 class="sort">Sort</h2>
 <select name="sort" id="sort">
   <option value="nil" selected="selected">-pick an option-</option>
   <option value="alphabetically">Alphabetically</option>
@@ -13,13 +13,13 @@
 
 <h2>New Link</h2>
 <%= form_for(@link_decorator.link) do |f| %>
-  <%= f.label :url, 'URL' %>
-  <%= f.text_field :url %>
+  <%= f.label :url, 'URL' %><br>
+  <%= f.text_field :url, class: 'input' %><br>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title, class: 'input' %><br>
 
-  <%= f.submit 'Submit' %>
+  <%= f.submit 'Submit', class: 'input' %>
 <% end %>
 
 <ul class="links">

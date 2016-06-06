@@ -1,3 +1,56 @@
+a {
+  color: #000;
+}
+
+input {
+  width: 200px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.greeting {
+  float: right;
+}
+
+.greeting small {
+  margin-right: 20px;
+}
+
+.search {
+  margin: 0 0 10px 0;
+}
+
+.flash {
+  text-align: center;
+}
+
+.sort {
+  margin: 10px 0 10px 0;
+}
+
+#searchBar,
+.input {
+  font-size: 1.5rem;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.input {
+  margin: 10px 0 10px 0;
+}
+
+.header {
+  padding: 20px 0;
+}
+
 .read-true {
   text-decoration: line-through;
 }
