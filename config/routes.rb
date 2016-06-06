@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
 
   # User routes
-  resources :users, only: [:new]
+  get '/signup', to: 'users#new', as: 'new_user'
 end
