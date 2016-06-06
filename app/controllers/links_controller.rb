@@ -27,16 +27,18 @@ class LinksController < ApplicationController
   end
 
   def update
-    link = Link.find(params[:id])
+    @link = Link.find(params[:id])
 
-    if link.update(link_params)
+    if @link.update(link_params)
       respond_to do |format|
         format.html do
           redirect_to links_path, flash: { success: 'Link updated!' }
         end
-        format.json { render json: link }
+        format.json { render json: @link }
       end
     else
+      flash.now[:error] = 'Invalid parameters'
+      render :edit
     end
   end
 
