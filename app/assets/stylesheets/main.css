@@ -5,3 +5,7 @@
 .read-false {
   text-decoration: none;
 }
+
+.hide {
+  display: none;
+}
